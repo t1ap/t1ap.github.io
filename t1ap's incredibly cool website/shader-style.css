@@ -10,6 +10,3 @@ div.content{
 div.content *{
 	animation: 1s ease-out 0.05s 1 slideUp;
 }
-fieldset, legend, hr{
-	border: solid lightgray thin;
-}
