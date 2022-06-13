@@ -6,15 +6,12 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
 		<meta property="og:title" content="T1ap's Incredibly Cool Website">
 		<meta property="og:type" content="website">
 		<meta property="og:url" content="https://t1ap.github.io/t1ap's%20incredibly%20cool%20website/index.html">
 		<meta property="og:image" content="https://t1ap.github.io/t1ap's%20incredibly%20cool%20website/icon.png">
 		<meta property="og:image:width" content="1200">
 		<meta property="og:image:height" content="627">
-		<meta property="og:description" content="t1ap's incredibly cool website">
-		
 		<link rel="stylesheet" href="style-common.css">
 		<style>
 			div#backdiv{
@@ -26,6 +23,7 @@
 				background-color: white;
 				width: 75vw;
 				transition: 0.5s;
+				transition-timing-function: ease;
 				justify-content: center;
 				box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
 				margin: auto;
@@ -46,18 +44,71 @@
 				width: 100%;
 				height: auto;
 			}
+			
+			div.menu {
+				position: fixed;
+				z-index: 2;
+				top: 0px;
+				left: 0px;
+				width: 50vw;
+				height: 100vh;
+				padding: 60px 5px 5px 5px;
+				background-color: white;
+				box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.4);
+				transform: translateX(-60vw);
+				transition: 0.5s;
+				transition-timing-function: ease;
+			}
+			div.menu a img{
+				width: 2em;
+				margin-right: 10px;
+			}
+			div.menu a{
+				display: flex;
+				height: 2em;
+				align-items: center;
+				color: black;
+				text-decoration: none;
+			}
+			
+			header button.menuButton{
+				transition: 0.5s;
+				transition-timing-function: ease;
+			}
 		</style>
+		
+		<script defer>
+			function toggleMenu(){
+				let menu = document.querySelector('div.menu');
+				let menuButton = document.querySelector('header button.menuButton');
+				
+				if(menu.style.transform === "translateX(0px)"){
+					menu.style.transform = "translateX(-60vw)";
+					menuButton.style.transform = "rotate(0deg)";
+				}else{
+					menu.style.transform = "translateX(0px)";
+					menuButton.style.transform = "rotate(360deg)";
+				}
+			}
+		</script>
 	</head>
 	
 	<body>
 		<div id="backdiv"></div>
 		
 		<header>
+			<button onclick="toggleMenu();" class="menuButton"><img src="menu_button.png"/></button>
 			<h2>T1ap's incredibly cool website</h2>
-			<div class="links">
-				<a href="https://discord.gg/j4AvK79"><img src="Discord-Logo-Black.png"/></a>
-			</div>
 		</header>
+		
+		<div class="menu">
+			<h2>T1ap's Incredibly Cool Website</h2>
+			<hr/>
+			<a href="https://discord.gg/j4AvK79"><img src="Discord-Logo-Black.png"/><p>Discord Server</p></a>
+			<a href="https://mcpedl.com/user/thedoubleap/"><img src="MCPEDL-logo.png"/><p>MCPEDL Account</p></a>
+			<a href="https://youtube.com/channel/UCK83DJjmG070CuuNXtNcChw"><img src="Youtube-logo-black.png"/><p>Youtube Channel (inactive)</p></a>
+			<p>Discord username: t1ap#1613</p>
+		</div>
 		
 		<!-- RUSPE Shaders -->
 		<div class="linktoshader">
