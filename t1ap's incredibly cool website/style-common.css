@@ -39,12 +39,14 @@ header{
 	padding-left: 1%;
 	padding-right: 1%;
 }
-header a{
+header a, header button{
 	text-decoration: none;
 	color: black;
 	height: 45%;
+	border: none;
+	background: none;
 }
-header a img{
+header img{
 	height: 100%;
 	margin-right: 5px;
 }
@@ -61,4 +63,7 @@ header .links a{
 header .links a img{
 	height: 100%;
 	width: auto
+}
+fieldset, legend, hr{
+	border: solid lightgray thin;
 }
