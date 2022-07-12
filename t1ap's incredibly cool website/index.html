@@ -50,7 +50,7 @@
 				z-index: 2;
 				top: 0px;
 				left: 0px;
-				width: 50vw;
+				width: 33vw;
 				height: 100vh;
 				padding: 60px 5px 5px 5px;
 				background-color: white;
@@ -75,15 +75,28 @@
 				transition: 0.5s;
 				transition-timing-function: ease;
 			}
+			
+			@media screen and (orientation: portrait){
+				div.menu{
+					width: 100vw;
+					transform: translateX(-110vw);
+				}
+			}
 		</style>
 		
 		<script defer>
-			function toggleMenu(){
+			let portrait = window.matchMedia("(orientation: portrait)");
+			portrait.addEventListener("change", function(e) {
+				toggleMenu(true);
+			})
+			
+			function toggleMenu(off){
 				let menu = document.querySelector('div.menu');
 				let menuButton = document.querySelector('header button.menuButton');
 				
-				if(menu.style.transform === "translateX(0px)"){
-					menu.style.transform = "translateX(-60vw)";
+				let p = (portrait.matches) ? '-110vw' : '-43vw';
+				if(menu.style.transform === "translateX(0px)" || off !== undefined){
+					menu.style.transform = `translateX(${p})`;
 					menuButton.style.transform = "rotate(0deg)";
 				}else{
 					menu.style.transform = "translateX(0px)";
@@ -105,8 +118,8 @@
 			<h2>T1ap's Incredibly Cool Website</h2>
 			<hr/>
 			<a href="https://discord.gg/j4AvK79"><img src="Discord-Logo-Black.png"/><p>Discord Server</p></a>
-			<a href="https://mcpedl.com/user/thedoubleap/"><img src="mcpedl-logo.png"/><p>MCPEDL Account</p></a>
-			<a href="https://youtube.com/channel/UCK83DJjmG070CuuNXtNcChw"><img src="YouTube-logo-black.png"/><p>Youtube Channel (inactive)</p></a>
+			<a href="https://mcpedl.com/user/thedoubleap/"><img src="MCPEDL-logo.png"/><p>MCPEDL Account</p></a>
+			<a href="https://youtube.com/channel/UCK83DJjmG070CuuNXtNcChw"><img src="Youtube-logo-black.png"/><p>Youtube Channel (inactive)</p></a>
 			<p>Discord username: t1ap#1613</p>
 		</div>
 		

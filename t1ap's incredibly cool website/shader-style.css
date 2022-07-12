@@ -10,3 +10,9 @@ div.content{
 div.content *{
 	animation: 1s ease-out 0.05s 1 slideUp;
 }
+summary{
+	font-size: 1.25em;
+}
+details img{
+	margin: 0.5em;
+}
