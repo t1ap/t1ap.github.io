@@ -6,6 +6,7 @@ div.content{
 	background-color: white;
 	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
 	border-radius: 5px;
+	word-wrap: break-word;
 }
 div.content *{
 	animation: 1s ease-out 0.05s 1 slideUp;
