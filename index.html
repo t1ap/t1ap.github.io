@@ -1,15 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Hello</title>
-		<meta name="description" content="hello">
+		<title>t1ap's incredibly cool website</title>
+		<meta name="description" content="t1ap's incredibly cool website">
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta property="og:title" content="T1ap's Incredibly Cool Website">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://t1ap.github.io/t1ap's%20incredibly%20cool%20website/index.html">
+		<meta property="og:image" content="https://t1ap.github.io/t1ap's%20incredibly%20cool%20website/icon.png">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="627">
+		<link rel="stylesheet" href="style.css">
+		<style>
+			div#backdiv{
+				background-image: url("shaders/Background.webp");
+			}
+			main{
+				animation: 1s ease-in-out 0s 1 slideUp;
+				/*display: flex;*/
+				background-color: white;
+				width: 90vw;
+				transition: 0.5s;
+				transition-timing-function: ease;
+				box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+				margin: auto;
+				padding: 1em;
+				border-radius: 5px;
+			}
+			
+			main img{
+				/*aspect-ratio: auto;*/
+				width: 100%;
+				height: auto;
+			}
+			div.links a img{
+				width: 2em;
+				margin-right: 10px;
+			}
+			div.links a{
+				display: flex;
+				height: 2em;
+				align-items: center;
+				color: black;
+				text-decoration: none;
+			}
+			
+			div.menu {
+				position: fixed;
+				z-index: 2;
+				top: 0px;
+				left: 0px;
+				width: 33vw;
+				height: 100vh;
+				padding: 60px 5px 5px 5px;
+				background-color: white;
+				box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.4);
+				transform: translateX(-60vw);
+				transition: 0.5s;
+				transition-timing-function: ease;
+			}
+			div.menu a img{
+				width: 2em;
+				margin-right: 10px;
+			}
+			div.menu a{
+				display: flex;
+				height: 2em;
+				align-items: center;
+				color: black;
+				text-decoration: none;
+			}
+			
+			header button.menuButton{
+				transition: 0.5s;
+				transition-timing-function: ease;
+			}
+			
+			@media screen and (orientation: portrait){
+				div.menu{
+					width: 100vw;
+					transform: translateX(-110vw);
+				}
+			}
+		</style>
+		
 	</head>
 	
 	<body>
-		<h1>welcome to my webpage!!1!1!1!11!1!</h1>
-		<a href="https://t1ap.github.io/t1ap's%20incredibly%20cool%20website/index.html">Go to t1ap's incredibly cool website</a>
+		<div id="backdiv"></div>
+		
+		<header>
+			<h2>T1ap's incredibly cool website</h2>
+		</header>
+		
+		<main>
+			<h1>Sample Text</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus mi nec sem consectetur rutrum. Cras at pellentesque dolor. Etiam nec pulvinar nisi. Donec ex urna, vestibulum a ornare quis, vehicula in sapien. Ut eget vulputate purus, a lobortis massa. Curabitur vel nisi eu ligula consectetur tristique. Fusce suscipit massa sed fringilla congue. Nullam varius enim vel nisl imperdiet, non fermentum justo aliquet. Nulla ut tempor nibh, ac tempus lectus. Nullam pharetra elit eros, nec finibus massa pellentesque id. Aliquam sollicitudin dolor est, nec gravida lacus commodo quis. Nullam viverra est eget turpis congue consequat. Sed enim ipsum, consequat nec dignissim a, finibus eu nunc. Sed quis ipsum dignissim, sodales purus et, laoreet urna. Vivamus finibus quis ante id pretium. Donec et velit tempor justo placerat malesuada et et sapien.</p>
+			
+			<h2><a href="shaders/index.html">My Shaders</a></h2>
+			<h2>Links:</h2>
+			
+			<div class="links">
+			<a href="https://discord.gg/j4AvK79"><img src="shaders/Discord-Logo-Black.png"/><p>Discord Server</p></a>
+			<a href="https://mcpedl.com/user/thedoubleap/"><img src="shaders/mcpedl-logo.png"/><p>MCPEDL Account</p></a>
+			<a href="https://youtube.com/channel/UCK83DJjmG070CuuNXtNcChw"><img src="shaders/YouTube-logo-black.png"/><p>Youtube Channel (inactive)</p></a>
+			<p>Discord username: t1ap#1613</p>
+			</div>
+		</main>
+		
 	</body>
 </html>
