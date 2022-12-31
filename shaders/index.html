@@ -84,26 +84,7 @@
 			}
 		</style>
 		
-		<script defer>
-			let portrait = window.matchMedia("(orientation: portrait)");
-			portrait.addEventListener("change", function(e) {
-				toggleMenu(true);
-			})
-			
-			function toggleMenu(off){
-				let menu = document.querySelector('div.menu');
-				let menuButton = document.querySelector('header button.menuButton');
-				
-				let p = (portrait.matches) ? '-110vw' : '-43vw';
-				if(menu.style.transform === "translateX(0px)" || off !== undefined){
-					menu.style.transform = `translateX(${p})`;
-					menuButton.style.transform = "rotate(0deg)";
-				}else{
-					menu.style.transform = "translateX(0px)";
-					menuButton.style.transform = "rotate(360deg)";
-				}
-			}
-		</script>
+		
 	</head>
 	
 	<body>
@@ -111,7 +92,7 @@
 		
 		<nav id="nav">
 			<h2>T1ap's Shaders</h2>
-			<a href="#" id="toggle"><img src="shaders/menu_button.png"/></a>
+			<a href="#" id="toggle"><img src="menu_button.png"/></a>
 			<ul id="navlinks">
 				<li><a href="../index.html">Home</a></li>
 				<li><a href="../shaders/index.html">My Shaders</a></li>
@@ -146,6 +127,14 @@
 			</a>
 		</div>
 		
-		<br/>
+		<br/>		
+		<script>
+			let toggle = document.querySelector('#toggle');
+			let links = document.querySelector('#navlinks');
+			let nav = document.querySelector('#nav');
+			
+			toggle.addEventListener('mouseenter', (_) => links.classList.add('active'));
+			nav.addEventListener('mouseleave', (_) => links.classList.remove('active'));
+		</script>
 	</body>
 </html>
