@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 @keyframes slideUp {
 	0% {
 		transform: translateY(100vh);
@@ -25,45 +29,79 @@ body{
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-header{
+nav{
 	position: fixed;
 	z-index: 10;
 	top: 0px;
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	width: 100vw;
-	height: 50px;
+	/*height: 50px;*/
+	/*transition: height 0.5ms ease-out;*/
 	box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.4);
 	margin: 0px 0px 20px 0px;
 	background-color:white;
 	padding-left: 1%;
 	padding-right: 1%;
 }
-header a, header button{
+nav h2{
+	display:flex;
+	margin: 0;
+	padding: 0;
+	height: 50px;
+	align-items: center;
+}
+nav ul{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	
+}
+nav ul li{
+	list-style: none;
+	transition: 0.25s;
+}
+nav ul li:hover{
+	background: #eee;
+}
+nav ul li a{
 	text-decoration: none;
 	color: black;
-	height: 45%;
-	border: none;
-	background: none;
+	padding: 1em;
+	display: block;
 }
-header img{
-	height: 100%;
-	margin-right: 5px;
-}
-header .links{
+
+nav a#toggle{
 	position: absolute;
-	right: 3%;
-	height: 75%;
+	right: 1em;
+	display: none;
 }
-header .links a{
-	text-decoration: none;
-	color: black;
-	height: 100%;
+@media screen and (orientation: portrait){
+	nav a#toggle{
+	    position: absolute;
+	    right: 1em;
+	    display: flex;
+    }
+	nav{
+		flex-direction: column;
+		align-items: flex-start;
+		transition: max-height 0.5s ease-out;
+	}
+	nav ul{
+		display: none;
+		width: 100%;
+		flex-direction: column;
+	}
+	nav ul.active{
+		display: flex;
+		margin-top: 0;
+	}
+	nav ul li{
+		text-align: center;
+	}
 }
-header .links a img{
-	height: 100%;
-	width: auto
-}
+
 fieldset, legend, hr{
 	border: solid lightgray thin;
 }

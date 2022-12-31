@@ -12,7 +12,7 @@
 		<meta property="og:image" content="https://t1ap.github.io/shaders/icon.png">
 		<meta property="og:image:width" content="1200">
 		<meta property="og:image:height" content="627">
-		<link rel="stylesheet" href="style-common.css">
+		<link rel="stylesheet" href="../style.css">
 		<style>
 			div#backdiv{
 				background-image: url("Background.webp");
@@ -84,35 +84,20 @@
 			}
 		</style>
 		
-		<script defer>
-			let portrait = window.matchMedia("(orientation: portrait)");
-			portrait.addEventListener("change", function(e) {
-				toggleMenu(true);
-			})
-			
-			function toggleMenu(off){
-				let menu = document.querySelector('div.menu');
-				let menuButton = document.querySelector('header button.menuButton');
-				
-				let p = (portrait.matches) ? '-110vw' : '-43vw';
-				if(menu.style.transform === "translateX(0px)" || off !== undefined){
-					menu.style.transform = `translateX(${p})`;
-					menuButton.style.transform = "rotate(0deg)";
-				}else{
-					menu.style.transform = "translateX(0px)";
-					menuButton.style.transform = "rotate(360deg)";
-				}
-			}
-		</script>
+		
 	</head>
 	
 	<body>
 		<div id="backdiv"></div>
 		
-		<header>
-			<a href="https://t1ap.github.io/index.html"><img src="arrow_back.png"/></a>
+		<nav id="nav">
 			<h2>T1ap's Shaders</h2>
-		</header>
+			<a href="#" id="toggle"><img src="menu_button.png"/></a>
+			<ul id="navlinks">
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="../shaders/index.html">My Shaders</a></li>
+			</ul>
+		</nav>
 		
 		<!-- RUSPE Shaders -->
 		<div class="linktoshader">
@@ -134,7 +119,7 @@
 			<a href="tdpe-shaders.html">
 				<img src="TDPESHADERSIMG.png" alt="TDPE Shaders"/>
 				<h1>TDPE Shaders</h1>
-				<h4>Latest version: 1.3</h4>
+				<h4>Latest version: 1.5</h4>
 				<p>
 					TDPE Shaders is a Shader pack for Minecraft PE that aims at making the graphics of the game more realistic and beautiful. 
 					This shader improves numerous graphical aspects of the game, but if you don't like any of the features, you can turn them off using shader settings.
@@ -142,6 +127,14 @@
 			</a>
 		</div>
 		
-		<br/>
+		<br/>		
+		<script>
+			let toggle = document.querySelector('#toggle');
+			let links = document.querySelector('#navlinks');
+			let nav = document.querySelector('#nav');
+			
+			toggle.addEventListener('mouseenter', (_) => links.classList.add('active'));
+			nav.addEventListener('mouseleave', (_) => links.classList.remove('active'));
+		</script>
 	</body>
 </html>

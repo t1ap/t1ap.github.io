@@ -32,8 +32,26 @@
 			
 			main img{
 				/*aspect-ratio: auto;*/
-				width: 100%;
+				width: 20em;
 				height: auto;
+			}
+			div.links{
+				display: flex;
+				flex-direction: row;
+				padding: 0.25em;
+				border-bottom: 1px solid gray;
+				border-top: 1px solid gray;
+				justify-content: space-between;
+			}
+			div.links a{
+				padding-right: 1em;
+				background-color: white;
+    		    flex-grow: 1;
+			}
+			div.links a + a{
+				border-left: 1px solid gray;
+                padding-left: 1em;
+				
 			}
 			div.links a img{
 				width: 2em;
@@ -41,7 +59,7 @@
 			}
 			div.links a{
 				display: flex;
-				height: 2em;
+				/*height: 2em;*/
 				align-items: center;
 				color: black;
 				text-decoration: none;
@@ -86,29 +104,42 @@
 			}
 		</style>
 		
+		
 	</head>
 	
 	<body>
 		<div id="backdiv"></div>
 		
-		<header>
+		<nav id="nav">
 			<h2>T1ap's incredibly cool website</h2>
-		</header>
+			<a href="#" id="toggle"><img src="shaders/menu_button.png"/></a>
+			<ul id="navlinks">
+				<li><a href="./index.html">Home</a></li>
+				<li><a href="./shaders/index.html">My Shaders</a></li>
+			</ul>
+		</nav>
 		
 		<main>
-			<h1>Sample Text</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus mi nec sem consectetur rutrum. Cras at pellentesque dolor. Etiam nec pulvinar nisi. Donec ex urna, vestibulum a ornare quis, vehicula in sapien. Ut eget vulputate purus, a lobortis massa. Curabitur vel nisi eu ligula consectetur tristique. Fusce suscipit massa sed fringilla congue. Nullam varius enim vel nisl imperdiet, non fermentum justo aliquet. Nulla ut tempor nibh, ac tempus lectus. Nullam pharetra elit eros, nec finibus massa pellentesque id. Aliquam sollicitudin dolor est, nec gravida lacus commodo quis. Nullam viverra est eget turpis congue consequat. Sed enim ipsum, consequat nec dignissim a, finibus eu nunc. Sed quis ipsum dignissim, sodales purus et, laoreet urna. Vivamus finibus quis ante id pretium. Donec et velit tempor justo placerat malesuada et et sapien.</p>
-			
-			<h2><a href="shaders/index.html">My Shaders</a></h2>
-			<h2>Links:</h2>
-			
+			<h1>T1ap's incredibly cool website </h1>
 			<div class="links">
 			<a href="https://discord.gg/j4AvK79"><img src="shaders/Discord-Logo-Black.png"/><p>Discord Server</p></a>
 			<a href="https://mcpedl.com/user/thedoubleap/"><img src="shaders/mcpedl-logo.png"/><p>MCPEDL Account</p></a>
 			<a href="https://youtube.com/channel/UCK83DJjmG070CuuNXtNcChw"><img src="shaders/YouTube-logo-black.png"/><p>Youtube Channel (inactive)</p></a>
-			<p>Discord username: t1ap#1613</p>
+			<a>Discord username: t1ap#1613</a>
 			</div>
+			
+			<a href="shaders/index.html"><h2>My Shaders</h2></a>
+			
+		
 		</main>
 		
+		<script>
+			let toggle = document.querySelector('#toggle');
+			let links = document.querySelector('#navlinks');
+			let nav = document.querySelector('#nav');
+			
+			toggle.addEventListener('mouseenter', (_) => links.classList.add('active'));
+			nav.addEventListener('mouseleave', (_) => links.classList.remove('active'));
+		</script>
 	</body>
 </html>

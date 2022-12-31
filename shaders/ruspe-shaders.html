@@ -13,7 +13,7 @@
 		<meta property="og:image:width" content="720">
 		<meta property="og:image:height" content="340">
 		<meta property="og:site_name" content="T1ap's Incredibly Cool Website">
-		<link rel="stylesheet" href="style-common.css">
+		<link rel="stylesheet" href="../style.css">
 		<link rel="stylesheet" href="shader-style.css">
 		<style>
 			div#backdiv{
@@ -25,10 +25,14 @@
 	<body>
 		<div id="backdiv"></div>
 		
-		<header>
-			<a href="index.html"><img src="arrow_back.png"/></a>
-			<h2>RUSPE Shaders</h2>
-		</header>
+		<nav id="nav">
+			<div><a href="index.html"><img src="arrow_back.png"/></a><h2>RUSPE Shaders</h2></div>
+			<a href="#" id="toggle"><img src="menu_button.png"/></a>
+			<ul id="navlinks">
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="../shaders/index.html">My Shaders</a></li>
+			</ul>
+		</nav>
 		<div class="content">
 			<h1>RUSPE Shaders</h1>
 			<h4>Latest version: 1.7.1</h4>
@@ -160,5 +164,13 @@
 			</details>
 		</div>
 		<br/>
+		<script>
+			let toggle = document.querySelector('#toggle');
+			let links = document.querySelector('#navlinks');
+			let nav = document.querySelector('#nav');
+			
+			toggle.addEventListener('mouseenter', (_) => links.classList.add('active'));
+			nav.addEventListener('mouseleave', (_) => links.classList.remove('active'));
+		</script>
 	</body>
 </html>
