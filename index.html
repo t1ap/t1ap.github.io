@@ -8,8 +8,8 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<meta property="og:title" content="T1ap's Incredibly Cool Website">
 		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://t1ap.github.io/index.html">
-		<meta property="og:image" content="https://t1ap.github.io/shaders/icon.png">
+		<meta property="og:url" content="https://t1ap.github.io/tindex.html">
+		<meta property="og:image" content="https://t1ap.github.io/t1ap's%20incredibly%20cool%20website/icon.png">
 		<meta property="og:image:width" content="1200">
 		<meta property="og:image:height" content="627">
 		<link rel="stylesheet" href="style.css">
@@ -42,11 +42,13 @@
 				border-bottom: 1px solid gray;
 				border-top: 1px solid gray;
 				justify-content: space-between;
+				overflow: auto;
 			}
 			div.links a{
 				padding-right: 1em;
 				background-color: white;
     		    flex-grow: 1;
+                /*overflow: scroll;*/
 			}
 			div.links a + a{
 				border-left: 1px solid gray;
@@ -97,9 +99,17 @@
 			}
 			
 			@media screen and (orientation: portrait){
-				div.menu{
-					width: 100vw;
-					transform: translateX(-110vw);
+				div.links{
+					flex-direction: column;
+					padding: 0;
+				}
+				div.links a{
+					padding-left: 1em;
+					min-height: 4em;
+				}
+				div.links a + a{
+					border: none;
+					border-top: 1px solid gray;
 				}
 			}
 		</style>
